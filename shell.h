@@ -111,21 +111,21 @@ typedef struct builtin
 } builtin_table;
 
 
-/* This function is toem_shloop.c */
+/* toem_shloop.c function */
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-/* This function is toem_parser.c */
+/* toem_parser.c function*/
 int cmd(info_t *, char *);
 char *double_charts(char *, int, int);
 char *define_path(info_t *, char *, char *);
 
-/* This function is loophsh.c */
+/* loophsh.c function*/
 int loophsh(char **);
 
-/* This function is toem_errors.c */
+/* toem_errors.c function*/
 void _eputs(char *);
 int _eputchar(char);
 int _putfd(char c, int fd);
