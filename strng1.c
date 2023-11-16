@@ -1,34 +1,34 @@
 #include "shell.h"
 
 /**
- * _strcpy - This function copies a string
+ * find_strcpy - This function copies a string
  * @dest: This is the destination
  * @src: Thi is the source
  *
  * Return: pointer to destination
  */
-char *_strcpy(char *dest, char *src)
+char *find_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int a = 0;
 
 	if (dest == src || src == 0)
 		return (dest);
-	while (src[i])
+	while (src[a])
 	{
-		dest[i] = src[i];
-		i++;
+		dest[a] = src[a];
+		a++;
 	}
-	dest[i] = 0;
+	dest[a] = 0;
 	return (dest);
 }
 
 /**
- * _strdup - This function duplicates a string
+ * find_strdup - This function duplicates a string
  * @str: This is the string to duplicate
  *
  * Return: pointer to the duplicated string
  */
-char *_strdup(const char *str)
+char *find_strdup(const char *str)
 {
 	int length = 0;
 	char *ret;
@@ -46,21 +46,21 @@ char *_strdup(const char *str)
 }
 
 /**
- *_puts - This function prints an input string
+ *find_puts - This function prints an input string
  *@str: This is the string to be printed
  *
  * Return: Nothing
  */
-void _puts(char *str)
+void find_puts(char *str)
 {
-	int i = 0;
+	int a = 0;
 
 	if (!str)
 		return;
-	while (str[i] != '\0')
+	while (str[a] != '\0')
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(str[a]);
+		a++;
 	}
 }
 
@@ -73,15 +73,15 @@ void _puts(char *str)
  */
 int _putchar(char c)
 {
-	static int i;
+	static int a;
 	static char buf[WRITE_BUF_SIZE];
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, i);
-		i = 0;
+		write(1, buf, a);
+		a = 0;
 	}
 	if (c != BUF_FLUSH)
-		buf[i++] = c;
+		buf[a++] = c;
 	return (1);
 }
