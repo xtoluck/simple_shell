@@ -18,7 +18,7 @@ char **strtow(char *str, char *d)
 	if (!d)
 		d = " ";
 	for (a = 0; str[a] != '\0'; a++)
-		if (!is_delim(str[i], d) && (is_delim(str[a + 1], d) || !str[a + 1]))
+		if (!is_delim(str[a], d) && (is_delim(str[a + 1], d) || !str[a + 1]))
 			numwords++;
 
 	if (numwords == 0)
@@ -28,7 +28,7 @@ char **strtow(char *str, char *d)
 		return (NULL);
 	for (a = 0, j = 0; j < numwords; j++)
 	{
-		while (is_delim(str[i], d))
+		while (is_delim(str[a], d))
 			a++;
 		k = 0;
 		while (!is_delim(str[a + k], d) && str[a + k])
@@ -76,7 +76,7 @@ char **strtow2(char *str, char d)
 		while (str[a] == d && str[a] != d)
 			a++;
 		k = 0;
-		while (str[a + k] != d && str[a + k] && str[i + k] != d)
+		while (str[a + k] != d && str[a + k] && str[a + k] != d)
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])

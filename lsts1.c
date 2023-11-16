@@ -27,7 +27,7 @@ size_t lists_lens(const list_t *h)
 char **lists_to_string(list_t *head)
 {
 	list_t *node = head;
-	size_t a = list_len(head), b;
+	size_t a = lists_lens(head), b;
 	char **strs;
 	char *str;
 
@@ -93,7 +93,7 @@ list_t *nodes_start_with(list_t *node, char *prefix, char c)
 
 	while (node)
 	{
-		p = starts_with(node->str, prefix);
+		p = started_with(node->str, prefix);
 		if (p && ((c == -1) || (*p == c)))
 			return (node);
 		node = node->next;

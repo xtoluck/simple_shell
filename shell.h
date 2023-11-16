@@ -118,9 +118,9 @@ void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
 /* toem_parser.c function*/
-int cmd(info_t *, char *);
+int is_cmd(info_t *, char *);
 char *double_charts(char *, int, int);
-char *define_path(info_t *, char *, char *);
+char *find_path(info_t *, char *, char *);
 
 /* loophsh.c function*/
 int loophsh(char **);
@@ -132,15 +132,15 @@ int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
 /* toem_strng.c function*/
-int find_strlen(char *);
-int find_strcmp(char *, char *);
+int _strlen(char *);
+int _strcmp(char *, char *);
 char *started_with(const char *, const char *);
-char *find_strcat(char *, char *);
+char *_strcat(char *, char *);
 
 /* toem_strng1.c function*/
-char *find_strcpy(char *, char *);
-char *find_strdup(const char *);
-void find_puts(char *);
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
 int _putchar(char);
 
 /* toem_exits.c function*/

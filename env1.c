@@ -8,7 +8,7 @@
  */
 int _myenv(info_t *info)
 {
-	print_list_str(info->env);
+	prints_lists_string(info->env);
 	return (0);
 }
 
@@ -25,7 +25,7 @@ char *_getenv(info_t *info, const char *name)
 
 	while (node)
 	{
-		p = starts_with(node->str, name);
+		p = started_with(node->str, name);
 		if (p && *p)
 			return (p);
 		node = node->next;
@@ -84,7 +84,7 @@ int populate_env_list(info_t *info)
 	size_t i;
 
 	for (i = 0; environ[i]; i++)
-		add_node_end(&node, environ[i], 0);
+		adds_nodes_ended(&node, environ[i], 0);
 	info->env = node;
 	return (0);
 }

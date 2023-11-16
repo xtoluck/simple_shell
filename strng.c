@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * find_strlen - This function returns the length of a string
+ * _strlen - This function returns the length of a string
  * @s: Thi is the string whose length to check
  *
  * Return: integer length of string
@@ -19,14 +19,14 @@ int _strlen(char *s)
 }
 
 /**
- * Find_strcmp - This function performs lexicogarphic
+ * _strcmp - This function performs lexicogarphic
  * comparison of two strangs.
  * @s1: This is the first strang
  * @s2: This is the second strang
  *
  * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
  */
-int find_strcmp(char *s1, char *s2)
+int _strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s2)
 	{
@@ -63,7 +63,7 @@ char *started_with(const char *haystack, const char *needle)
  *
  * Return: pointer to destination buffer
  */
-char *find_strcat(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 	char *ret = dest;
 

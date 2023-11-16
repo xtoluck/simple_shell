@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * cmd - This function determines if a file is an executable command
+ * is_cmd - This function determines if a file is an executable command
  * @info: This is the info struct
  * @path: This is the path to the file
  *
  * Return: 1 if true, 0 otherwise
  */
-int cmd(info_t *info, char *path)
+int is_cmd(info_t *info, char *path)
 {
 	struct stat st;
 
@@ -43,30 +43,30 @@ char *double_charts(char *pathstr, int start, int stop)
 }
 
 /**
- * define_path - This function finds this cmd in the PATH string
+ * find_path - This function finds this cmd in the PATH string
  * @info: This is the info struct
  * @pathstr: This is the PATH string
  * @cmd: This is the cmd to find
  *
  * Return: full path of cmd if found or NULL
  */
-char *define_path(info_t *info, char *pathstr, char *cmd)
+char *find_path(info_t *info, char *pathstr, char *cmd)
 {
 	int a = 0, curr_pos = 0;
 	char *path;
 
 	if (!pathstr)
 		return (NULL);
-	if ((_strlen(cmd) > 2) && starts_with(cmd, "./"))
+	if ((_strlen(cmd) > 2) && started_with(cmd, "./"))
 	{
 		if (is_cmd(info, cmd))
 			return (cmd);
 	}
 	while (1)
 	{
-		if (!pathstr[i] || pathstr[i] == ':')
+		if (!pathstr[a] || pathstr[a] == ':')
 		{
-			path = dup_chars(pathstr, curr_pos, a);
+			path = double_charts(pathstr, curr_pos, a);
 			if (!*path)
 				_strcat(path, cmd);
 			else
